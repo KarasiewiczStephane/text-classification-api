@@ -23,6 +23,7 @@ pre-commit>=3.0
 
 # Benchmarking
 matplotlib>=3.8
+seaborn>=0.13
 pandas>=2.1
 tabulate>=0.9
 psutil>=5.9
