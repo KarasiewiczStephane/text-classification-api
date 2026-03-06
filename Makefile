@@ -1,4 +1,4 @@
-.PHONY: install test lint clean run docker-build docker-run docker-dev
+.PHONY: install test lint clean run dashboard docker-build docker-run docker-dev
 
 IMAGE_NAME = text-classification-api
 VERSION = 1.0.0
@@ -19,6 +19,9 @@ clean:
 
 run:
 	python -m uvicorn src.api.app:app --host 0.0.0.0 --port 8000 --reload
+
+dashboard:
+	streamlit run src/dashboard/app.py
 
 docker-build:
 	docker build -t $(IMAGE_NAME):$(VERSION) -t $(IMAGE_NAME):latest .
